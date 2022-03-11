@@ -2,12 +2,6 @@ import cv2 as cv
 import numpy as np
 import webbrowser
 from osax import *
-
-
-
-# def numFaces(frame):
-#     faces = haarCascade.detectMultiScale(frame)
-#     return len(faces)
     
 haarCascade = cv.CascadeClassifier('harrFace.xml')
 sa = OSAX()
@@ -18,7 +12,6 @@ while True:
     if frame is None:
         print('--(!) No captured frame -- Break!')
         break
-    # cv.imshow('Video', frame)
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
     faces = haarCascade.detectMultiScale(gray)
     
